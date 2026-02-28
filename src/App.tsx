@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 
 const OverviewPage = lazy(() => import('./pages/OverviewPage'));
@@ -33,6 +33,7 @@ function App() {
             <Route path="/evidence" element={<EvidencePage />} />
             <Route path="/methodology" element={<MethodologyPage />} />
             <Route path="/prompts" element={<PromptsPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
       </Layout>
