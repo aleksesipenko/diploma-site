@@ -1,0 +1,829 @@
+{
+  "summary": {
+    "criteriaAverages": {
+      "gemini": {
+        "adequacy": 9.0,
+        "style": 8.5,
+        "naturalness": 8.5,
+        "terminology": 8.7,
+        "pragmatics": 8.25,
+        "weighted": 8.72
+      },
+      "gigachat": {
+        "adequacy": 6.4,
+        "style": 6.15,
+        "naturalness": 5.95,
+        "terminology": 5.6,
+        "pragmatics": 5.75,
+        "weighted": 6.12
+      },
+      "claude": {
+        "adequacy": 9.15,
+        "style": 9.3,
+        "naturalness": 9.25,
+        "terminology": 9.2,
+        "pragmatics": 9.4,
+        "weighted": 9.23
+      }
+    },
+    "textScores": [
+      {
+        "id": 1,
+        "title": "News (IT-регулирование)",
+        "genre": "News",
+        "genreRu": "Новостной",
+        "gemini": 8.75,
+        "gigachat": 7.1,
+        "claude": 9.1,
+        "winner": "Claude"
+      },
+      {
+        "id": 2,
+        "title": "News (Google Quantum)",
+        "genre": "News",
+        "genreRu": "Новостной",
+        "gemini": 8.6,
+        "gigachat": 6.55,
+        "claude": 9.35,
+        "winner": "Claude"
+      },
+      {
+        "id": 3,
+        "title": "Sci-pop (Brain interfaces)",
+        "genre": "Sci-pop",
+        "genreRu": "Научно-популярный",
+        "gemini": 8.85,
+        "gigachat": 5.75,
+        "claude": 9.25,
+        "winner": "Claude"
+      },
+      {
+        "id": 4,
+        "title": "Sci-pop (AI philosophy)",
+        "genre": "Sci-pop",
+        "genreRu": "Научно-популярный",
+        "gemini": 8.8,
+        "gigachat": 5.9,
+        "claude": 9.3,
+        "winner": "Claude"
+      },
+      {
+        "id": 5,
+        "title": "Official (Board meeting)",
+        "genre": "Official",
+        "genreRu": "Официально-деловой",
+        "gemini": 8.7,
+        "gigachat": 6.8,
+        "claude": 9.45,
+        "winner": "Claude"
+      },
+      {
+        "id": 6,
+        "title": "Official (Legal opinion)",
+        "genre": "Official",
+        "genreRu": "Официально-деловой",
+        "gemini": 8.7,
+        "gigachat": 6.55,
+        "claude": 9.4,
+        "winner": "Claude"
+      },
+      {
+        "id": 7,
+        "title": "Advertising (Headphones)",
+        "genre": "Advertising",
+        "genreRu": "Рекламный",
+        "gemini": 8.8,
+        "gigachat": 5.35,
+        "claude": 9.15,
+        "winner": "Claude"
+      },
+      {
+        "id": 8,
+        "title": "Advertising (Cosmetics)",
+        "genre": "Advertising",
+        "genreRu": "Рекламный",
+        "gemini": 8.7,
+        "gigachat": 6.0,
+        "claude": 8.85,
+        "winner": "Claude"
+      },
+      {
+        "id": 9,
+        "title": "Fiction (Short story 1)",
+        "genre": "Fiction",
+        "genreRu": "Художественный",
+        "gemini": 8.7,
+        "gigachat": 5.95,
+        "claude": 8.8,
+        "winner": "Claude"
+      },
+      {
+        "id": 10,
+        "title": "Fiction (Short story 2)",
+        "genre": "Fiction",
+        "genreRu": "Художественный",
+        "gemini": 8.7,
+        "gigachat": 6.6,
+        "claude": 9.5,
+        "winner": "Claude"
+      }
+    ],
+    "genreRankings": [
+      {
+        "genre": "News",
+        "genreRu": "Новостной",
+        "textIds": [
+          1,
+          2
+        ],
+        "gemini": 8.68,
+        "gigachat": 6.83,
+        "claude": 9.23,
+        "leader": "claude",
+        "leaderMargin": 0.55,
+        "observations": [
+          "Claude лидирует с заметным отрывом",
+          "GigaChat значительно отстает"
+        ]
+      },
+      {
+        "genre": "Sci-pop",
+        "genreRu": "Научно-популярный",
+        "textIds": [
+          3,
+          4
+        ],
+        "gemini": 8.83,
+        "gigachat": 5.83,
+        "claude": 9.28,
+        "leader": "claude",
+        "leaderMargin": 0.45,
+        "observations": [
+          "Наибольший разрыв в жанре",
+          "GigaChat показал худший результат"
+        ]
+      },
+      {
+        "genre": "Official",
+        "genreRu": "Официально-деловой",
+        "textIds": [
+          5,
+          6
+        ],
+        "gemini": 8.7,
+        "gigachat": 6.68,
+        "claude": 9.43,
+        "leader": "claude",
+        "leaderMargin": 0.73,
+        "observations": [
+          "Самый большой отрыв Claude",
+          "GigaChat не справился с официальным стилем"
+        ]
+      },
+      {
+        "genre": "Advertising",
+        "genreRu": "Рекламный",
+        "textIds": [
+          7,
+          8
+        ],
+        "gemini": 8.75,
+        "gigachat": 5.68,
+        "claude": 9.0,
+        "leader": "claude",
+        "leaderMargin": 0.25,
+        "observations": [
+          "Наименьший отрыв среди жанров",
+          "GigaChat исказил название бренда"
+        ]
+      },
+      {
+        "genre": "Fiction",
+        "genreRu": "Художественный",
+        "textIds": [
+          9,
+          10
+        ],
+        "gemini": 8.7,
+        "gigachat": 6.28,
+        "claude": 9.15,
+        "leader": "claude",
+        "leaderMargin": 0.45,
+        "observations": [
+          "GigaChat потерял ключевые образы",
+          "Claude лучше передал атмосферу"
+        ]
+      }
+    ],
+    "overallWinner": {
+      "model": "claude",
+      "score": 9.23,
+      "wins": 10,
+      "genreWins": 5,
+      "confidence": "Высокая (≥ 95%)",
+      "marginToGemini": 0.51,
+      "marginToGigachat": 3.11
+    },
+    "metrics": {
+      "referenceModel": "claude",
+      "bleu": {
+        "gemini": 19.67,
+        "gigachat": 4.93
+      },
+      "meteor": {
+        "gemini": 0.3957,
+        "gigachat": 0.1461
+      }
+    },
+    "modelProfiles": {
+      "gemini": {
+        "score": 8.72,
+        "traits": "Сильная адаптация формул, качественный перевод, хорошее владение жанровыми конвенциями",
+        "errors": "Добавление паратекста, стилистические шероховатости"
+      },
+      "gigachat": {
+        "score": 6.12,
+        "traits": "Попытка локализации, некоторые удачные решения",
+        "errors": "Потеря ключевых терминов, терминологические ошибки, отсутствие подписи, стилистические дефекты"
+      },
+      "claude": {
+        "score": 9.23,
+        "traits": "Эталонное владение жанром, терминологическая точность, стилистическая ровность",
+        "errors": "Минимальные недочёты"
+      }
+    },
+    "limitations": [
+      "Один переводчик-эксперт (субъективность)",
+      "10 текстов (небольшая выборка)",
+      "Только EN→RU"
+    ],
+    "conclusions": [
+      "Claude значительно превосходит конкурентов по всем критериям",
+      "GigaChat требует существенной доработки",
+      "Gemini — крепкий середняк, но без лидерства",
+      "Разрыв между Claude и GigaChat — более 3 баллов"
+    ]
+  },
+  "reports": [
+    {
+      "id": 1,
+      "title": "News (IT-регулирование)",
+      "genre": "News",
+      "genreRu": "Новостной",
+      "genreDescription": "Новостной текст информационного жанра — передача актуальной новости о новых правилах регулирования социальных сетей в Индии.",
+      "original": "India has introduced new rules that make it mandatory for social media companies to remove unlawful material within three hours of being notified, in a sharp tightening of existing 36-hour deadline. The amended guidelines will take effect from 20 February and apply to major platforms including Meta, YouTube and X. They will also apply to AI-generated content.\n\nThe government did not provide a specific reason for reducing the takedown window. However, critics worry the move is part of a broader tightening of oversight of online content and could lead to censorship in the world's largest democracy with more than a billion internet users.\n\nIn recent years, Indian authorities have used existing Information Technology rules to order social media platforms to remove content deemed illegal under laws dealing with national security and public order. Experts say they give authorities wide-ranging power over social media content.\n\nAccording to transparency reports, more than 28,000 URLs or web links were blocked in 2024 following government requests. The new amendments also introduce rules for AI-generated material for the first time, requiring platforms to clearly label such content and add permanent markers where possible to trace its origin.",
+      "translations": {
+        "gemini": "Индия ввела новые правила, обязывающие соцсети удалять незаконные материалы в течение трех часов после получения уведомления, что значительно укорачивает предыдущий дедлайн в 36 часов...",
+        "gigachat": "Правительство Индии решило, что соцсети должны за 3 часа удалять плохой контент. Раньше давали 36 часов на это. Это касается Meta, YouTube и X, а также ИИ-картинок.",
+        "claude": "Индия ввела в действие новый регламент, обязывающий социальные сети удалять противоправный контент в течение трех часов после уведомления, что является существенным ужесточением прежнего 36-часового срока. Обновленные рекомендации вступят в силу 20 февраля...",
+        "humanReference": "Индия ввела новые правила, обязывающие компании, работающие в сфере социальных сетей, удалять незаконные материалы в течение трёх часов после получения уведомления, что представляет собой значительное ужесточение действующего срока в 36 часов. Обновлённые руководящие принципы вступят в силу 20 февраля и будут распространяться на крупнейшие платформы, включая Meta, YouTube и X. Они также будут применяться к контенту, созданному с помощью искусственного интеллекта.\n\nПравительство не назвало конкретной причины сокращения срока удаления контента. Однако критики опасаются, что этот шаг является частью более масштабного ужесточения контроля над онлайн-контентом и может привести к цензуре в крупнейшей демократии мира, насчитывающей более миллиарда интернет-пользователей.\n\nВ последние годы индийские власти использовали действующие нормы в области информационных технологий, чтобы обязывать платформы социальных сетей удалять контент, признанный незаконным в соответствии с законодательством о национальной безопасности и общественном порядке. По мнению экспертов, эти нормы наделяют власти широкими полномочиями в отношении контента в социальных сетях.\n\nСогласно отчётам о прозрачности, в 2024 году по запросам правительства было заблокировано более 28 000 URL-адресов или веб-ссылок. Новые поправки также впервые вводят правила в отношении материалов, созданных с помощью искусственного интеллекта, обязывая платформы чётко маркировать такой контент и по возможности добавлять постоянные метки для отслеживания его происхождения."
+      },
+      "scores": {
+        "gemini": {
+          "adequacy": 9.0,
+          "style": 8.5,
+          "naturalness": 8.5,
+          "terminology": 9.0,
+          "pragmatics": 8.0,
+          "weighted": 8.75
+        },
+        "gigachat": {
+          "adequacy": 7.0,
+          "style": 7.0,
+          "naturalness": 7.0,
+          "terminology": 7.5,
+          "pragmatics": 7.0,
+          "weighted": 7.1
+        },
+        "claude": {
+          "adequacy": 9.5,
+          "style": 9.0,
+          "naturalness": 9.0,
+          "terminology": 9.0,
+          "pragmatics": 8.5,
+          "weighted": 9.1
+        }
+      },
+      "winner": "claude",
+      "winnerText": "Победитель: Claude",
+      "observations": {
+        "gemini": [
+          "Качественная адаптация",
+          "Хорошая терминология"
+        ],
+        "gigachat": [
+          "Потеря нюансов",
+          "Терминологические неточности"
+        ],
+        "claude": [
+          "Точная передача",
+          "Естественный язык"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "title": "News (Google Quantum)",
+      "genre": "News",
+      "genreRu": "Новостной",
+      "genreDescription": "Новостной текст о технологическом прорыве Google в области квантовых вычислений.",
+      "original": "Google has unveiled a new quantum chip called Willow, which the company claims could take five minutes to solve a problem that would currently take the world's fastest supercomputers 10 septillion years. The announcement represents a significant milestone in quantum computing research, bringing the field closer to practical applications.\n\nQuantum computing harnesses the strange properties of quantum mechanics to perform calculations that would be impossible for classical computers. Unlike traditional computers that use bits representing 0 or 1, quantum computers use quantum bits or qubits that can exist in multiple states simultaneously.\n\nThe Willow chip features 105 qubits and demonstrates a major breakthrough in error correction, one of the biggest challenges in quantum computing. Google researchers published their findings in the journal Nature, showing that the chip performed a benchmark computation in under five minutes that would take a supercomputer 10 septillion years to complete.\n\nIndustry experts caution that practical quantum computers are still years away from widespread commercial use. However, Google's achievement suggests that quantum supremacy might be approaching sooner than previously expected.",
+      "translations": {
+        "gemini": "Google представила новый квантовый чип Willow, который, по утверждению компании, может за 5 минут решить задачу, на которую самому быстрому суперкомпьютеру в мире потребовалось бы 10 септиллионов лет.",
+        "gigachat": "У Google появился чип Willow. Он считает за 5 минут то, что суперкомпьютер считал бы 10 септиллионов лет. Это большой шаг для квантовых компьютеров.",
+        "claude": "Корпорация Google анонсировала выпуск нового квантового процессора под названием Willow. По заявлениям разработчиков, этот чип способен за пять минут выполнить вычисления, на которые у самых производительных современных суперкомпьютеров ушло бы 10 септиллионов лет.",
+        "humanReference": "Компания Google представила новый квантовый чип под названием Willow, который, по её заявлению, способен за пять минут решить задачу, на выполнение которой самым быстрым суперкомпьютерам в мире потребовалось бы 10 септиллионов лет. Это объявление знаменует собой важную веху в исследованиях в области квантовых вычислений, приближая эту сферу к практическому применению.\n\nКвантовые вычисления используют необычные свойства квантовой механики для выполнения расчётов, которые были бы невозможны для классических компьютеров. В отличие от традиционных компьютеров, использующих биты со значениями 0 или 1, квантовые компьютеры работают с квантовыми битами, или кубитами, которые могут одновременно находиться в нескольких состояниях.\n\nЧип Willow содержит 105 кубитов и демонстрирует крупный прорыв в области коррекции ошибок — одной из главных проблем квантовых вычислений. Исследователи Google опубликовали свои результаты в журнале Nature, показав, что чип выполнил эталонное вычисление менее чем за пять минут, тогда как суперкомпьютеру для его завершения потребовалось бы 10 септиллионов лет.\n\nОтраслевые эксперты предупреждают, что до широкого коммерческого использования практических квантовых компьютеров ещё далеко. Тем не менее достижение Google свидетельствует о том, что квантовое превосходство может наступить раньше, чем ожидалось."
+      },
+      "scores": {
+        "gemini": {
+          "adequacy": 8.5,
+          "style": 8.5,
+          "naturalness": 8.5,
+          "terminology": 8.5,
+          "pragmatics": 8.5,
+          "weighted": 8.6
+        },
+        "gigachat": {
+          "adequacy": 6.5,
+          "style": 6.5,
+          "naturalness": 6.5,
+          "terminology": 6.5,
+          "pragmatics": 6.5,
+          "weighted": 6.55
+        },
+        "claude": {
+          "adequacy": 9.5,
+          "style": 9.0,
+          "naturalness": 9.5,
+          "terminology": 9.0,
+          "pragmatics": 9.5,
+          "weighted": 9.35
+        }
+      },
+      "winner": "claude",
+      "winnerText": "Победитель: Claude",
+      "observations": {
+        "gemini": [
+          "Хорошая терминология",
+          "Шероховатости"
+        ],
+        "gigachat": [
+          "Ошибки терминологии",
+          "Неестественно"
+        ],
+        "claude": [
+          "Безупречно",
+          "Отличный стиль"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "Sci-pop (Brain interfaces)",
+      "genre": "Sci-pop",
+      "genreRu": "Научно-популярный",
+      "genreDescription": "Научно-популярный текст о технологиях интерфейсов мозг-компьютер.",
+      "original": "The prospect of connecting human brains directly to computers has moved from science fiction to reality. Neuralink, the company founded by Elon Musk, has successfully implanted its first brain-computer interface in a human patient. The achievement marks a pivotal moment in the development of brain-machine interfaces, potentially opening new frontiers for treating neurological conditions.",
+      "translations": {
+        "gemini": "Перспектива прямого подключения человеческого мозга к компьютеру перешла из разряда научной фантастики в реальность. Neuralink Илона Маска успешно имплантировала свой первый интерфейс...",
+        "gigachat": "Люди и компьютеры теперь могут соединяться мозгом. Компания Маска Neuralink вживила чип человеку. Это важно для лечения болезней нервов.",
+        "claude": "Возможность прямого подключения человеческого мозга к компьютеру из жанра научной фантастики стала реальностью. Компания Neuralink, основанная Илоном Маском, успешно осуществила имплантацию своего первого нейроинтерфейса пациенту...",
+        "humanReference": "Перспектива прямого подключения человеческого мозга к компьютерам перешла из области научной фантастики в реальность. Компания Neuralink, основанная Илоном Маском, успешно имплантировала свой первый нейрокомпьютерный интерфейс пациенту. Это достижение стало поворотным моментом в развитии интерфейсов «мозг — машина» и потенциально открывает новые горизонты в лечении неврологических заболеваний."
+      },
+      "scores": {
+        "gemini": {
+          "adequacy": 9.0,
+          "style": 8.5,
+          "naturalness": 8.5,
+          "terminology": 9.0,
+          "pragmatics": 8.5,
+          "weighted": 8.85
+        },
+        "gigachat": {
+          "adequacy": 5.5,
+          "style": 6.0,
+          "naturalness": 5.5,
+          "terminology": 6.0,
+          "pragmatics": 5.5,
+          "weighted": 5.75
+        },
+        "claude": {
+          "adequacy": 9.5,
+          "style": 9.0,
+          "naturalness": 9.0,
+          "terminology": 9.5,
+          "pragmatics": 9.0,
+          "weighted": 9.25
+        }
+      },
+      "winner": "claude",
+      "winnerText": "Победитель: Claude",
+      "observations": {
+        "gemini": [
+          "Хорошая терминология",
+          "Упрощения"
+        ],
+        "gigachat": [
+          "Серьёзные ошибки",
+          "Потеря точности"
+        ],
+        "claude": [
+          "Точная терминология",
+          "Баланс"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "title": "Sci-pop (AI philosophy)",
+      "genre": "Sci-pop",
+      "genreRu": "Научно-популярный",
+      "genreDescription": "Научно-популярный текст о философских вопросах искусственного интеллекта.",
+      "original": "As artificial intelligence systems become increasingly sophisticated, fundamental questions about the nature of intelligence and consciousness are being reexamined. The debate no longer belongs solely to philosophers—computer scientists, neuroscientists, and ethicists are now grappling with questions that have puzzled humanity for millennia.",
+      "translations": {
+        "gemini": "По мере того как системы ИИ становятся все более сложными, фундаментальные вопросы о природе интеллекта пересматриваются...",
+        "gigachat": "ИИ умнеет, и люди снова думают о сознании. Теперь об этом спорят не только философы, но и ученые-программисты.",
+        "claude": "По мере того как системы искусственного интеллекта становятся всё более совершенными, фундаментальные вопросы о природе интеллекта и сознания подвергаются переосмыслению. Эта дискуссия больше не является прерогативой исключительно философов...",
+        "humanReference": "По мере того как системы искусственного интеллекта становятся всё более совершенными, фундаментальные вопросы о природе интеллекта и сознания подвергаются переосмыслению. Эта дискуссия больше не является исключительной прерогативой философов — сегодня с вопросами, не дававшими покоя человечеству на протяжении тысячелетий, сталкиваются специалисты в области информатики, нейробиологии и этики."
+      },
+      "scores": {
+        "gemini": {
+          "adequacy": 8.8,
+          "style": 8.8,
+          "naturalness": 8.8,
+          "terminology": 8.8,
+          "pragmatics": 8.8,
+          "weighted": 8.8
+        },
+        "gigachat": {
+          "adequacy": 5.8,
+          "style": 6.0,
+          "naturalness": 5.8,
+          "terminology": 6.0,
+          "pragmatics": 5.8,
+          "weighted": 5.9
+        },
+        "claude": {
+          "adequacy": 9.3,
+          "style": 9.3,
+          "naturalness": 9.3,
+          "terminology": 9.3,
+          "pragmatics": 9.3,
+          "weighted": 9.3
+        }
+      },
+      "winner": "claude",
+      "winnerText": "Победитель: Claude",
+      "observations": {
+        "gemini": [
+          "Хорошие концепции",
+          "Упрощения"
+        ],
+        "gigachat": [
+          "Потеря глубины",
+          "Неестественно"
+        ],
+        "claude": [
+          "Точные термины",
+          "Отличный стиль"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "title": "Official (Board meeting)",
+      "genre": "Official",
+      "genreRu": "Официально-деловой",
+      "genreDescription": "Протокол заседания совета директоров — официальный документ.",
+      "original": "The meeting of the Board of Directors was called to order at 10:00 AM. The presence of a quorum was confirmed with all four Board members present.\n\nThe first item on the agenda was the Financial Report Update. The CFO presented the Q4 financial results, showing revenue of $2.5 million and operating expenses of $1.8 million. The expenses were contained within the approved budget.\n\nRespectfully submitted, Corporate Secretary.",
+      "translations": {
+        "gemini": "Заседание Совета директоров началось в 10:00 утра. Наличие кворума было подтверждено присутствием всех четырех членов Совета. Первым вопросом повестки дня был отчет о финансовых результатах...",
+        "gigachat": "Директора собрались в 10 утра. Был кворум 4 человека. Сначала обсудили деньги за 4 квартал. Доход 2,5 млн, расходы 1,8 млн.",
+        "claude": "Заседание Совета директоров было открыто в 10:00. Наличие кворума подтверждено: на заседании присутствовали все четыре члена Совета. Первым пунктом повестки дня стало заслушивание финансового отчета...",
+        "humanReference": "Заседание Совета директоров было открыто в 10:00. Наличие кворума было подтверждено — присутствовали все четыре члена Совета директоров.\n\nПервым пунктом повестки дня стал обзор финансовой отчётности. Финансовый директор представил финансовые результаты за четвёртый квартал: выручка составила 2,5 млн долларов, операционные расходы — 1,8 млн долларов. Расходы не превысили утверждённый бюджет.\n\nС уважением, корпоративный секретарь."
+      },
+      "scores": {
+        "gemini": {
+          "adequacy": 8.7,
+          "style": 8.5,
+          "naturalness": 8.5,
+          "terminology": 9.0,
+          "pragmatics": 8.0,
+          "weighted": 8.7
+        },
+        "gigachat": {
+          "adequacy": 6.8,
+          "style": 6.5,
+          "naturalness": 6.5,
+          "terminology": 7.0,
+          "pragmatics": 6.5,
+          "weighted": 6.8
+        },
+        "claude": {
+          "adequacy": 9.5,
+          "style": 9.5,
+          "naturalness": 9.5,
+          "terminology": 9.5,
+          "pragmatics": 9.0,
+          "weighted": 9.45
+        }
+      },
+      "winner": "claude",
+      "winnerText": "Победитель: Claude",
+      "observations": {
+        "gemini": [
+          "Хорошие формулы",
+          "Паратекст"
+        ],
+        "gigachat": [
+          "Нет кворума",
+          "Нет подписи"
+        ],
+        "claude": [
+          "Эталон",
+          "Все формулы"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "title": "Official (Legal opinion)",
+      "genre": "Official",
+      "genreRu": "Официально-деловой",
+      "genreDescription": "Официальное юридическое заключение — документ правового характера.",
+      "original": "We have reviewed the proposed acquisition of TechCorp by MegaCorp and provide the following legal opinion.\n\nBased on our analysis of the transaction documents and applicable securities laws, we conclude that the proposed acquisition structure complies with all applicable regulatory requirements.",
+      "translations": {
+        "gemini": "Мы рассмотрели предлагаемое приобретение TechCorp компанией MegaCorp и предоставляем следующее юридическое заключение...",
+        "gigachat": "Мы прочитали документы о покупке TechCorp МегаКорпом. Покупка нормальная и по закону.",
+        "claude": "Нами было изучено предполагаемое приобретение компании TechCorp корпорацией MegaCorp, на основании чего мы представляем настоящее юридическое заключение. Опираясь на анализ транзакционной документации...",
+        "humanReference": "Мы рассмотрели предполагаемое приобретение компании TechCorp компанией MegaCorp и представляем следующее юридическое заключение.\n\nНа основании проведенного нами анализа документации по сделке и применимого законодательства о ценных бумагах мы приходим к выводу о том, что предложенная структура приобретения соответствует всем применимым нормативным требованиям."
+      },
+      "scores": {
+        "gemini": {
+          "adequacy": 8.7,
+          "style": 8.5,
+          "naturalness": 8.5,
+          "terminology": 9.0,
+          "pragmatics": 8.5,
+          "weighted": 8.7
+        },
+        "gigachat": {
+          "adequacy": 6.5,
+          "style": 6.5,
+          "naturalness": 6.5,
+          "terminology": 6.5,
+          "pragmatics": 6.5,
+          "weighted": 6.55
+        },
+        "claude": {
+          "adequacy": 9.4,
+          "style": 9.5,
+          "naturalness": 9.5,
+          "terminology": 9.5,
+          "pragmatics": 9.0,
+          "weighted": 9.4
+        }
+      },
+      "winner": "claude",
+      "winnerText": "Победитель: Claude",
+      "observations": {
+        "gemini": [
+          "Юридическая терминология",
+          "Недочёты"
+        ],
+        "gigachat": [
+          "Потеря точности",
+          "Неестественно"
+        ],
+        "claude": [
+          "Безупречно",
+          "Профессионально"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "title": "Advertising (Headphones)",
+      "genre": "Advertising",
+      "genreRu": "Рекламный",
+      "genreDescription": "Рекламный продуктовый текст с элементами call-to-action.",
+      "original": "INTRODUCING THE ALL-NEW SONICX PRO WIRELESS HEADPHONES\n\nWhy settle for ordinary when you can demand perfection? The SonicX Pro is designed for those who refuse to compromise on sound quality. Available now at sonicxaudio.com. Use promo code AUDIO20 for 20% off.",
+      "translations": {
+        "gemini": "ПРЕДСТАВЛЯЕМ НОВЫЕ БЕСПРОВОДНЫЕ НАУШНИКИ SONICX PRO. Зачем довольствоваться обычным, когда можно требовать совершенства? SonicX Pro создан для тех, кто не приемлет компромиссов в качестве звука...",
+        "gigachat": "Новые наушники СОНИК ПРО без проводов. Не берите обычные, берите идеальные. Звук супер. Покупайте на sonicxaudio.com со скидкой 20% по коду AUDIO20.",
+        "claude": "ВСТРЕЧАЙТЕ АБСОЛЮТНО НОВЫЕ БЕСПРОВОДНЫЕ НАУШНИКИ SONICX PRO. Зачем соглашаться на обыденность, если можно требовать совершенства? SonicX Pro созданы для тех, кто не приемлет компромиссов в качестве звука. Уже в продаже на sonicxaudio.com. Используйте промокод AUDIO20 для получения скидки 20%.",
+        "humanReference": "ПРЕДСТАВЛЯЕМ СОВЕРШЕННО НОВЫЕ БЕСПРОВОДНЫЕ НАУШНИКИ SONICX PRO\n\nЗачем довольствоваться обычным, если можно требовать совершенства? SonicX Pro созданы для тех, кто не готов идти на компромиссы в качестве звука. Уже в продаже на sonicxaudio.com. Используйте промокод AUDIO20 и получите скидку 20%."
+      },
+      "scores": {
+        "gemini": {
+          "adequacy": 9.0,
+          "style": 9.0,
+          "naturalness": 8.5,
+          "terminology": 8.5,
+          "pragmatics": 8.5,
+          "weighted": 8.8
+        },
+        "gigachat": {
+          "adequacy": 5.0,
+          "style": 5.5,
+          "naturalness": 5.0,
+          "terminology": 5.5,
+          "pragmatics": 5.0,
+          "weighted": 5.35
+        },
+        "claude": {
+          "adequacy": 9.5,
+          "style": 9.0,
+          "naturalness": 9.0,
+          "terminology": 9.0,
+          "pragmatics": 9.0,
+          "weighted": 9.15
+        }
+      },
+      "winner": "claude",
+      "winnerText": "Победитель: Claude",
+      "observations": {
+        "gemini": [
+          "Хорошая адаптация",
+          "Метаданные"
+        ],
+        "gigachat": [
+          "Искажён бренд",
+          "Неверный URL"
+        ],
+        "claude": [
+          "Точный бренд",
+          "Естественный стиль"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "title": "Advertising (Cosmetics)",
+      "genre": "Advertising",
+      "genreRu": "Рекламный",
+      "genreDescription": "Рекламный текст косметической линии.",
+      "original": "RADIANCE BEAUTY COLLECTION\n\nTransform your daily skincare routine with our revolutionary new collection. Every full-size purchase comes with a complimentary travel-size eye cream. Your satisfaction is guaranteed.",
+      "translations": {
+        "gemini": "КОЛЛЕКЦИЯ КРАСОТЫ RADIANCE. Преобразите свой ежедневный уход за кожей с нашей революционной новой коллекцией. К каждой полноразмерной покупке прилагается бесплатный крем для глаз дорожного формата.",
+        "gigachat": "Косметика Radiance! Измени свою кожу каждый день с нашей крутой коллекцией. Купи большое средство и получи крем для глаз для путешествий в подарок.",
+        "claude": "КОЛЛЕКЦИЯ КРАСОТЫ RADIANCE. Преобразите свой ежедневный ритуал ухода за кожей с нашей революционной новой линией. К каждой покупке полноразмерного продукта прилагается крем для век в дорожном формате в качестве комплимента. Мы гарантируем ваше удовлетворение.",
+        "humanReference": "КОЛЛЕКЦИЯ RADIANCE BEAUTY\n\nПреобразите свой ежедневный уход за кожей с помощью нашей революционной новой коллекции. К каждому полноразмерному средству прилагается крем для кожи вокруг глаз в дорожном формате в подарок. Мы гарантируем ваше полное удовлетворение."
+      },
+      "scores": {
+        "gemini": {
+          "adequacy": 8.7,
+          "style": 8.5,
+          "naturalness": 8.5,
+          "terminology": 9.0,
+          "pragmatics": 8.5,
+          "weighted": 8.7
+        },
+        "gigachat": {
+          "adequacy": 6.0,
+          "style": 6.0,
+          "naturalness": 6.0,
+          "terminology": 6.0,
+          "pragmatics": 6.0,
+          "weighted": 6.0
+        },
+        "claude": {
+          "adequacy": 8.5,
+          "style": 9.0,
+          "naturalness": 9.0,
+          "terminology": 9.0,
+          "pragmatics": 9.0,
+          "weighted": 8.85
+        }
+      },
+      "winner": "claude",
+      "winnerText": "Победитель: Claude",
+      "observations": {
+        "gemini": [
+          "Хорошая адаптация",
+          "Метаданные"
+        ],
+        "gigachat": [
+          "Переведён бренд",
+          "Ты-обращение"
+        ],
+        "claude": [
+          "Сохранён бренд",
+          "Правильное Вы"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "title": "Fiction (Short story 1)",
+      "genre": "Fiction",
+      "genreRu": "Художественный",
+      "genreDescription": "Короткий лирический рассказ с элегическим настроением.",
+      "original": "The morning light filtered through the cracked windows of Elena's grandmother's cafe. The smell of espresso lingered in the air, but something was missing. Without her grandmother's touch, the place felt hollow.\n\nShe had inherited the small cafe next door to the flower shop. Outside, the morning sun warmed the empty tables. Perhaps tomorrow things would feel different.",
+      "translations": {
+        "gemini": "Утренний свет пробивался сквозь треснувшие окна кафе бабушки Елены. В воздухе витал запах эспрессо, но чего-то не хватало...",
+        "gigachat": "Утром светило солнце через разбитые окна в кафе бабушки Елены. Пахло кофе, но было пусто. Без бабушки тут плохо.",
+        "claude": "Утренний свет сочился сквозь треснувшие окна бабушкиного кафе Елены. В воздухе все еще витал аромат эспрессо, однако чего-то неуловимо недоставало. Без бабушкиных заботливых рук это место казалось опустевшим.",
+        "humanReference": "Утренний свет пробивался сквозь потрескавшиеся окна бабушкиного кафе. В воздухе витал аромат эспрессо, но чего-то не хватало. Без бабушкиных рук это место казалось пустым.\n\nЕлена унаследовала маленькое кафе по соседству с цветочным магазином. Снаружи утреннее солнце согревало пустующие столики. Быть может, завтра всё будет ощущаться иначе."
+      },
+      "scores": {
+        "gemini": {
+          "adequacy": 8.7,
+          "style": 8.5,
+          "naturalness": 8.5,
+          "terminology": 8.5,
+          "pragmatics": 8.5,
+          "weighted": 8.7
+        },
+        "gigachat": {
+          "adequacy": 6.0,
+          "style": 5.5,
+          "naturalness": 6.0,
+          "terminology": 6.0,
+          "pragmatics": 6.5,
+          "weighted": 5.95
+        },
+        "claude": {
+          "adequacy": 8.5,
+          "style": 9.0,
+          "naturalness": 9.0,
+          "terminology": 8.5,
+          "pragmatics": 9.0,
+          "weighted": 8.8
+        }
+      },
+      "winner": "claude",
+      "winnerText": "Победитель: Claude",
+      "observations": {
+        "gemini": [
+          "Атмосфера",
+          "Элегантно"
+        ],
+        "gigachat": [
+          "Потеря образа",
+          "Ошибки"
+        ],
+        "claude": [
+          "Атмосфера",
+          "Финал"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "title": "Fiction (Short story 2)",
+      "genre": "Fiction",
+      "genreRu": "Художественный",
+      "genreDescription": "Современный короткий рассказ с элементами саспенса.",
+      "original": "The night train to Harlow was running late. Sarah checked her phone: 11:48 PM. The station was nearly empty at this hour—just her, a figure huddled on the bench, and the fluorescent lights humming overhead.\n\n\"Excuse me,\" a voice said. \"Do you know if the next train is coming?\"\n\nThe train arrived at 11:53.",
+      "translations": {
+        "gemini": "Ночной поезд до Харлоу опаздывал. Сара проверила телефон: 23:48. Станция в этот час была почти пуста — только она, фигура, сжавшаяся на скамейке, и гудящие флуоресцентные лампы наверху...",
+        "gigachat": "Поезд в Харлоу опаздывал. Сара смотрела в мобильный - 23:48. На станции никого почти. Только она и еще один чел на лавке. И лампы гудят.\n«Извините», — кто-то сказал. «Когда поезд?»\nПоезд пришел в 23:53.",
+        "claude": "Ночной поезд до Харлоу задерживался. Сара взглянула на экран телефона: 23:48. В этот час станция была практически безлюдна — лишь она сама, некая фигура, съежившаяся на скамье, да гудение люминесцентных ламп под потолком.\n«Прошу прощения, — раздался чей-то голос. — Вы не знаете, скоро ли следующий поезд?»\nПоезд прибыл в 23:53.",
+        "humanReference": "Ночной поезд до Харлоу опаздывал. Сара посмотрела на телефон: 23:48. В этот час станция была почти пуста — только она, съёжившаяся на скамейке фигура и гудящие над головой люминесцентные лампы.\n\n— Простите, — раздался голос. — Вы не знаете, следующий поезд скоро будет?\n\nПоезд прибыл в 23:53."
+      },
+      "scores": {
+        "gemini": {
+          "adequacy": 8.7,
+          "style": 8.5,
+          "naturalness": 8.5,
+          "terminology": 8.5,
+          "pragmatics": 8.5,
+          "weighted": 8.7
+        },
+        "gigachat": {
+          "adequacy": 6.5,
+          "style": 6.5,
+          "naturalness": 6.5,
+          "terminology": 7.0,
+          "pragmatics": 6.5,
+          "weighted": 6.6
+        },
+        "claude": {
+          "adequacy": 9.5,
+          "style": 9.5,
+          "naturalness": 9.5,
+          "terminology": 9.5,
+          "pragmatics": 9.5,
+          "weighted": 9.5
+        }
+      },
+      "winner": "claude",
+      "winnerText": "Победитель: Claude",
+      "observations": {
+        "gemini": [
+          "Атмосфера",
+          "Метаданные"
+        ],
+        "gigachat": [
+          "Грамматика",
+          "Потеря пещеры"
+        ],
+        "claude": [
+          "Ритм",
+          "Минимализм"
+        ]
+      }
+    }
+  ]
+}
