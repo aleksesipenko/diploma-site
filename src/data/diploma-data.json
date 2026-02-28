@@ -42,9 +42,9 @@
         "title": "News (Google Quantum)",
         "genre": "News",
         "genreRu": "Новостной",
-        "gemini": 8.6,
-        "gigachat": 6.55,
-        "claude": 9.35,
+        "gemini": 8.45,
+        "gigachat": 6.15,
+        "claude": 9.0,
         "winner": "claude"
       },
       {
@@ -62,9 +62,9 @@
         "title": "Sci-pop (Black hole)",
         "genre": "Sci-pop",
         "genreRu": "Научно-популярный",
-        "gemini": 8.8,
-        "gigachat": 5.9,
-        "claude": 9.3,
+        "gemini": 8.35,
+        "gigachat": 4.75,
+        "claude": 9.1,
         "winner": "claude"
       },
       {
@@ -83,8 +83,8 @@
         "genre": "Official",
         "genreRu": "Официально-деловой",
         "gemini": 8.7,
-        "gigachat": 6.55,
-        "claude": 9.4,
+        "gigachat": 6.8,
+        "claude": 9.45,
         "winner": "claude"
       },
       {
@@ -336,28 +336,28 @@
       },
       "scores": {
         "gemini": {
-          "adequacy": 8.5,
-          "style": 8.5,
-          "naturalness": 8.5,
-          "terminology": 8.5,
-          "pragmatics": 8.5,
-          "weighted": 8.6
+          "adequacy": 9,
+          "style": 8,
+          "naturalness": 8,
+          "terminology": 8,
+          "pragmatics": 8,
+          "weighted": 8.45
         },
         "gigachat": {
-          "adequacy": 6.5,
-          "style": 6.5,
-          "naturalness": 6.5,
-          "terminology": 6.5,
-          "pragmatics": 6.5,
-          "weighted": 6.55
+          "adequacy": 6,
+          "style": 7,
+          "naturalness": 6,
+          "terminology": 5,
+          "pragmatics": 6,
+          "weighted": 6.15
         },
         "claude": {
-          "adequacy": 9.5,
-          "style": 9.0,
-          "naturalness": 9.5,
-          "terminology": 9.0,
-          "pragmatics": 9.5,
-          "weighted": 9.35
+          "adequacy": 9,
+          "style": 9,
+          "naturalness": 9,
+          "terminology": 9,
+          "pragmatics": 9,
+          "weighted": 9.0
         }
       },
       "winner": "claude",
@@ -448,28 +448,28 @@
       },
       "scores": {
         "gemini": {
-          "adequacy": 8.8,
-          "style": 8.8,
-          "naturalness": 8.8,
-          "terminology": 8.8,
-          "pragmatics": 8.8,
-          "weighted": 8.8
+          "adequacy": 9,
+          "style": 8,
+          "naturalness": 8,
+          "terminology": 9,
+          "pragmatics": 7,
+          "weighted": 8.35
         },
         "gigachat": {
-          "adequacy": 5.8,
-          "style": 6.0,
-          "naturalness": 5.8,
-          "terminology": 6.0,
-          "pragmatics": 5.8,
-          "weighted": 5.9
+          "adequacy": 5,
+          "style": 5,
+          "naturalness": 4,
+          "terminology": 4,
+          "pragmatics": 5,
+          "weighted": 4.75
         },
         "claude": {
-          "adequacy": 9.3,
-          "style": 9.3,
-          "naturalness": 9.3,
-          "terminology": 9.3,
-          "pragmatics": 9.3,
-          "weighted": 9.3
+          "adequacy": 9,
+          "style": 9,
+          "naturalness": 9,
+          "terminology": 10,
+          "pragmatics": 9,
+          "weighted": 9.1
         }
       },
       "winner": "claude",
@@ -560,28 +560,28 @@
       },
       "scores": {
         "gemini": {
-          "adequacy": 8.7,
+          "adequacy": 9,
           "style": 8.5,
           "naturalness": 8.5,
-          "terminology": 9.0,
-          "pragmatics": 8.5,
+          "terminology": 9,
+          "pragmatics": 8,
           "weighted": 8.7
         },
         "gigachat": {
-          "adequacy": 6.5,
+          "adequacy": 7,
           "style": 6.5,
-          "naturalness": 6.5,
-          "terminology": 6.5,
-          "pragmatics": 6.5,
-          "weighted": 6.55
+          "naturalness": 7,
+          "terminology": 7,
+          "pragmatics": 6,
+          "weighted": 6.8
         },
         "claude": {
-          "adequacy": 9.4,
+          "adequacy": 9.5,
           "style": 9.5,
           "naturalness": 9.5,
-          "terminology": 9.5,
-          "pragmatics": 9.0,
-          "weighted": 9.4
+          "terminology": 9,
+          "pragmatics": 9.5,
+          "weighted": 9.45
         }
       },
       "winner": "claude",
@@ -672,27 +672,27 @@
       },
       "scores": {
         "gemini": {
-          "adequacy": 8.7,
+          "adequacy": 9,
           "style": 8.5,
           "naturalness": 8.5,
-          "terminology": 9.0,
+          "terminology": 9,
           "pragmatics": 8.5,
           "weighted": 8.7
         },
         "gigachat": {
-          "adequacy": 6.0,
-          "style": 6.0,
-          "naturalness": 6.0,
-          "terminology": 6.0,
-          "pragmatics": 6.0,
+          "adequacy": 6.5,
+          "style": 5.5,
+          "naturalness": 6,
+          "terminology": 5.5,
+          "pragmatics": 6,
           "weighted": 6.0
         },
         "claude": {
           "adequacy": 8.5,
-          "style": 9.0,
-          "naturalness": 9.0,
-          "terminology": 9.0,
-          "pragmatics": 9.0,
+          "style": 9,
+          "naturalness": 9,
+          "terminology": 9,
+          "pragmatics": 9.5,
           "weighted": 8.85
         }
       },
@@ -784,18 +784,18 @@
       },
       "scores": {
         "gemini": {
-          "adequacy": 8.7,
+          "adequacy": 9,
           "style": 8.5,
           "naturalness": 8.5,
-          "terminology": 8.5,
+          "terminology": 9,
           "pragmatics": 8.5,
           "weighted": 8.7
         },
         "gigachat": {
-          "adequacy": 6.5,
+          "adequacy": 7,
           "style": 6.5,
-          "naturalness": 6.5,
-          "terminology": 7.0,
+          "naturalness": 6,
+          "terminology": 7,
           "pragmatics": 6.5,
           "weighted": 6.6
         },
