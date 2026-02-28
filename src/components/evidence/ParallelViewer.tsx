@@ -10,6 +10,19 @@ interface ParallelViewerProps {
   report: TextReport;
 }
 
+const SOURCE_BY_REPORT_ID: Record<number, { label: string; url?: string }> = {
+  1: { label: 'BBC News', url: 'https://www.bbc.com/news/articles/c2lrn8q2q24o' },
+  2: { label: 'BBC News', url: 'https://www.bbc.com/news/articles/c04gvx7egw5o' },
+  3: { label: 'Webb / научпоп корпус' },
+  4: { label: 'Astronomy corpus' },
+  5: { label: 'Business communication corpus' },
+  6: { label: 'Board meeting minutes corpus' },
+  7: { label: 'Product copy corpus (SonicX)' },
+  8: { label: 'Beauty product copy corpus (Radiance)' },
+  9: { label: 'Fiction corpus (short story)' },
+  10: { label: 'Fiction corpus (short story)' },
+};
+
 const cleanTextForDisplay = (input: string): string => {
   if (!input) return '';
 
@@ -41,6 +54,9 @@ const cleanTextForDisplay = (input: string): string => {
       // remove markdown separator and metadata tails
       if (t === '---') return false;
       if (/^\*\*(источник|url|ссылка|тип|количество слов|объём текста)\*\*:/i.test(t)) return false;
+
+      // remove common assistant prefaces that are not part of source text
+      if (/^(выполняю перевод|вот перевод|ниже перевод|перевод текста|предлагаю перевод)/i.test(t)) return false;
 
       return true;
     });
@@ -75,6 +91,7 @@ const ContentBox = ({ text }: { text: string }) => (
 
 const ParallelViewer: React.FC<ParallelViewerProps> = ({ report }) => {
   const modelIds = ['gemini', 'gigachat', 'claude'] as const;
+  const sourceMeta = SOURCE_BY_REPORT_ID[report.id];
 
   const models = modelIds.map((id) => {
     const profile = findLlmProfileByName(id);
@@ -92,11 +109,21 @@ const ParallelViewer: React.FC<ParallelViewerProps> = ({ report }) => {
 
   return (
     <section className="mb-16">
-      <div className="flex items-center gap-3 mb-8">
+      <div className="flex items-center gap-3 mb-4">
         <div className="p-2 bg-accent/10 rounded-lg">
           <MessageSquareQuote className="w-6 h-6 text-accent" />
         </div>
         <h2 className="text-2xl font-serif font-bold text-text-primary tracking-tight">Параллельный просмотр</h2>
+      </div>
+
+
+      <div className="mb-6 text-xs text-text-secondary">
+        <span className="font-semibold">Источник оригинала:</span>{' '}
+        {sourceMeta?.url ? (
+          <a className="text-accent hover:underline" href={sourceMeta.url} target="_blank" rel="noreferrer">{sourceMeta.label}</a>
+        ) : (
+          <span>{sourceMeta?.label || 'N/A'}</span>
+        )}
       </div>
 
       {/* Desktop Grid */}
