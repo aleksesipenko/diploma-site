@@ -61,9 +61,9 @@ const CriteriaPage: React.FC = () => {
           </p>
         </div>
         <div className="p-8 bg-accent text-surface rounded-3xl space-y-4">
-          <h3 className="text-2xl font-bold text-white">Автоматизация vs Эксперты</h3>
+          <h3 className="text-2xl font-bold text-white">Автоматизация vs LLM-as-a-Judge</h3>
           <p className="text-surface/90 leading-relaxed">
-            Данные баллы получены путем экспертной оценки лингвистами. Мы сравниваем их с автоматическими метриками (BLEU, METEOR)
+            Данные баллы получены путем оценки нейросетью-судьей (Claude 4.6 Opus). Мы сравниваем их с классическими автоматическими метриками (BLEU, METEOR)
             в разделе методологии для верификации результатов исследования.
           </p>
         </div>
