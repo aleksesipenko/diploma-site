@@ -16,6 +16,11 @@ const WinnerHero: React.FC<WinnerHeroProps> = ({ winnerData }) => {
     profile?.color === 'blue' ? 'from-blue-200 to-blue-500' :
       'from-amber-200 to-amber-500';
 
+  const winnerPrimary = profile?.shortName || winnerData.model;
+  const winnerSuffix = profile
+    ? (profile.name.replace(profile.shortName, '').trim() || 'Opus')
+    : 'Opus';
+
   return (
     <div className="relative overflow-hidden rounded-[32px] mb-16 shadow-medium group">
       {/* Background Image */}
@@ -42,14 +47,14 @@ const WinnerHero: React.FC<WinnerHeroProps> = ({ winnerData }) => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 tracking-tight drop-shadow-xl leading-tight">
-            {profile?.shortName || winnerData.model} <span className={`text-transparent bg-clip-text bg-gradient-to-r ${colors}`}>
-              {profile?.name.split(' ').slice(1).join(' ') || 'Opus'}
+            {winnerPrimary} <span className={`text-transparent bg-clip-text bg-gradient-to-r ${colors}`}>
+              {winnerSuffix}
             </span>
           </h1>
 
           <p className="text-lg text-gray-300 mb-10 max-w-2xl leading-relaxed font-light">
             По результатам строгого лингвистического профилирования на корпусе из 10 разножанровых текстов,
-            {profile?.shortName || winnerData.model} продемонстрировал непревзойденную адаптивность и терминологическую точность.
+            {winnerPrimary} продемонстрировал непревзойденную адаптивность и терминологическую точность.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 border-t border-white/10 pt-10">
