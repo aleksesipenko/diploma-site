@@ -71,7 +71,7 @@ const EvidencePage: React.FC = () => {
             </h1>
             <p className="text-text-secondary max-w-2xl text-lg md:text-xl leading-relaxed">
               Детальный разбор каждого из 10 контрольных текстов. Сравнивайте оригиналы с результатами
-              разных моделей и изучайте экспертные оценки.
+              разных моделей и изучайте оценки нейросети-судьи.
             </p>
           </div>
         </div>

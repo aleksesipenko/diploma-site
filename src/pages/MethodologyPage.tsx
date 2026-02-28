@@ -41,7 +41,7 @@ const MethodologyPage: React.FC = () => {
             </div>
             <div className="card shadow-soft hover:shadow-medium transition-shadow">
               <h4 className="font-bold text-text-primary mb-2 font-serif text-lg">Этап 3: Экспертная оценка (LLM-as-a-Judge)</h4>
-              <p className="text-sm text-text-secondary">Поаспектный анализ каждого текста передовой языковой моделью Claude 4.6 Opus в рамках методологии LLM-as-a-Judge, выступающей в качестве эксперта-лингвиста. Это является методическим экспериментом, призванным минимизировать субъективность человеческого фактора.</p>
+              <p className="text-sm text-text-secondary">Поаспектный анализ каждого текста передовой языковой моделью Claude 4.6 Opus в рамках методологии LLM-as-a-Judge, выступающей в качестве независимого арбитра. Это является методическим экспериментом, призванным минимизировать субъективность человеческого фактора.</p>
             </div>
             <div className="card shadow-soft hover:shadow-medium transition-shadow">
               <h4 className="font-bold text-text-primary mb-2 font-serif text-lg">Этап 4: Статистический анализ</h4>
@@ -92,7 +92,7 @@ const MethodologyPage: React.FC = () => {
       <section className="mb-20">
         <h3 className="text-2xl font-serif font-medium text-stone-900 mb-4">4. Автоматические метрики (BLEU / METEOR / COMET)</h3>
         <p className="text-stone-600 mb-6 leading-relaxed">
-          Для верификации оценок LLM-as-a-Judge (Claude Opus) применялся расчет метрик <strong>BLEU</strong>, <strong>METEOR</strong> и <strong>COMET</strong>. В качестве эталонного («человеческого») перевода (Reference) использовались ответы, сгенерированные Claude 4.6 Opus через API OpenRouter, которым была дана строгая инструкция (Prompt) выступить в роли эталонного человеческого переводчика. Это позволило алгоритмически сопоставить семантическую (COMET) и n-граммную (BLEU/METEOR) близость каждой модели к профессиональному эталону.
+          Для верификации оценок LLM-as-a-Judge (Claude Opus) применялся расчет метрик <strong>BLEU</strong>, <strong>METEOR</strong> и <strong>COMET</strong>. В качестве эталонного перевода (Reference) использовались ответы, сгенерированные Claude 4.6 Opus через API OpenRouter, которым была дана строгая инструкция (Prompt) выступить в роли эталонного переводчика. Это позволило алгоритмически сопоставить семантическую (COMET) и n-граммную (BLEU/METEOR) близость каждой модели к нейросетевому эталону.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-surface border border-border rounded-2xl p-6 shadow-sm">
