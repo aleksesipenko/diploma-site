@@ -1,5 +1,6 @@
 import React from 'react';
 import type { GenreStats } from '../../types';
+import { MODEL_COLORS } from '../../types';
 import { ChevronDown, MessageSquare, Target, BookOpen } from 'lucide-react';
 import * as Accordion from '@radix-ui/react-accordion';
 
@@ -20,8 +21,8 @@ const GenreInsights: React.FC<GenreInsightsProps> = ({ data }) => {
 
       <Accordion.Root type="multiple" className="space-y-4">
         {data.map((genre) => (
-          <Accordion.Item 
-            key={genre.genre} 
+          <Accordion.Item
+            key={genre.genre}
             value={genre.genre}
             className="border border-border rounded-2xl bg-surface overflow-hidden shadow-soft transition-all duration-300 data-[state=open]:ring-2 data-[state=open]:ring-accent/20"
           >
@@ -65,8 +66,8 @@ const GenreInsights: React.FC<GenreInsightsProps> = ({ data }) => {
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {genre.textIds.map((id) => (
-                        <span 
-                          key={id} 
+                        <span
+                          key={id}
                           className="px-3 py-1 bg-bg border border-border rounded-lg text-xs font-medium text-text-primary"
                         >
                           Текст #{id}
@@ -76,20 +77,25 @@ const GenreInsights: React.FC<GenreInsightsProps> = ({ data }) => {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-border">
+                <div className="pt-4 border-t border-border space-y-3">
+                  <div className="flex items-center gap-4 text-xs font-bold text-text-secondary uppercase tracking-widest">
+                    <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: MODEL_COLORS.gemini }} /> Gemini</div>
+                    <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: MODEL_COLORS.gigachat }} /> GigaChat</div>
+                    <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: MODEL_COLORS.claude }} /> Claude</div>
+                  </div>
                   <div className="flex items-center gap-4 text-sm">
                     <div className="flex-grow h-2 bg-bg rounded-full overflow-hidden flex">
-                      <div 
-                        className="h-full bg-blue-500 transition-all duration-1000" 
-                        style={{ width: `${(Number(genre.gemini ?? 0) / 10) * 100}%` }} 
+                      <div
+                        className="h-full transition-all duration-1000"
+                        style={{ width: `${(Number(genre.gemini ?? 0) / 10) * 100}%`, backgroundColor: MODEL_COLORS.gemini }}
                       />
-                      <div 
-                        className="h-full bg-green-500 transition-all duration-1000" 
-                        style={{ width: `${(Number(genre.gigachat ?? 0) / 10) * 100}%` }} 
+                      <div
+                        className="h-full transition-all duration-1000"
+                        style={{ width: `${(Number(genre.gigachat ?? 0) / 10) * 100}%`, backgroundColor: MODEL_COLORS.gigachat }}
                       />
-                      <div 
-                        className="h-full bg-amber-500 transition-all duration-1000" 
-                        style={{ width: `${(Number(genre.claude ?? 0) / 10) * 100}%` }} 
+                      <div
+                        className="h-full transition-all duration-1000"
+                        style={{ width: `${(Number(genre.claude ?? 0) / 10) * 100}%`, backgroundColor: MODEL_COLORS.claude }}
                       />
                     </div>
                     <span className="text-text-secondary font-mono text-xs">Разрыв: {genre.leaderMargin.toFixed(1)}</span>
