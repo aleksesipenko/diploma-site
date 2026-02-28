@@ -35,7 +35,7 @@
         "gemini": 8.75,
         "gigachat": 7.1,
         "claude": 9.1,
-        "winner": "Claude"
+        "winner": "claude"
       },
       {
         "id": 2,
@@ -45,47 +45,47 @@
         "gemini": 8.6,
         "gigachat": 6.55,
         "claude": 9.35,
-        "winner": "Claude"
+        "winner": "claude"
       },
       {
         "id": 3,
-        "title": "Sci-pop (Brain interfaces)",
+        "title": "Sci-pop (James Webb)",
         "genre": "Sci-pop",
         "genreRu": "Научно-популярный",
         "gemini": 8.85,
         "gigachat": 5.75,
         "claude": 9.25,
-        "winner": "Claude"
+        "winner": "claude"
       },
       {
         "id": 4,
-        "title": "Sci-pop (AI philosophy)",
+        "title": "Sci-pop (Black hole)",
         "genre": "Sci-pop",
         "genreRu": "Научно-популярный",
         "gemini": 8.8,
         "gigachat": 5.9,
         "claude": 9.3,
-        "winner": "Claude"
+        "winner": "claude"
       },
       {
         "id": 5,
-        "title": "Official (Board meeting)",
+        "title": "Official (Contract amendment)",
         "genre": "Official",
         "genreRu": "Официально-деловой",
         "gemini": 8.7,
         "gigachat": 6.8,
         "claude": 9.45,
-        "winner": "Claude"
+        "winner": "claude"
       },
       {
         "id": 6,
-        "title": "Official (Legal opinion)",
+        "title": "Official (Board meeting)",
         "genre": "Official",
         "genreRu": "Официально-деловой",
         "gemini": 8.7,
         "gigachat": 6.55,
         "claude": 9.4,
-        "winner": "Claude"
+        "winner": "claude"
       },
       {
         "id": 7,
@@ -95,7 +95,7 @@
         "gemini": 8.8,
         "gigachat": 5.35,
         "claude": 9.15,
-        "winner": "Claude"
+        "winner": "claude"
       },
       {
         "id": 8,
@@ -105,7 +105,7 @@
         "gemini": 8.7,
         "gigachat": 6.0,
         "claude": 8.85,
-        "winner": "Claude"
+        "winner": "claude"
       },
       {
         "id": 9,
@@ -115,7 +115,7 @@
         "gemini": 8.7,
         "gigachat": 5.95,
         "claude": 8.8,
-        "winner": "Claude"
+        "winner": "claude"
       },
       {
         "id": 10,
@@ -125,7 +125,7 @@
         "gemini": 8.7,
         "gigachat": 6.6,
         "claude": 9.5,
-        "winner": "Claude"
+        "winner": "claude"
       }
     ],
     "genreRankings": [
@@ -227,12 +227,12 @@
     "metrics": {
       "referenceModel": "claude",
       "bleu": {
-        "gemini": 19.67,
-        "gigachat": 4.93
+        "gemini": 13.38,
+        "gigachat": 3.18
       },
       "meteor": {
-        "gemini": 0.3957,
-        "gigachat": 0.1461
+        "gemini": 0.3069,
+        "gigachat": 0.1332
       }
     },
     "modelProfiles": {

@@ -40,8 +40,8 @@ const MethodologyPage: React.FC = () => {
               <p className="text-sm text-text-secondary">Получение переводов от трех LLM (<LlmTooltip name="Gemini 3.1 Pro">Gemini</LlmTooltip>, <LlmTooltip name="GigaChat 2 Max">GigaChat</LlmTooltip>, <LlmTooltip name="Claude 4.6 Opus">Claude</LlmTooltip>) с использованием идентичных системных промптов.</p>
             </div>
             <div className="card shadow-soft hover:shadow-medium transition-shadow">
-              <h4 className="font-bold text-text-primary mb-2 font-serif text-lg">Этап 3: Экспертная оценка</h4>
-              <p className="text-sm text-text-secondary">Поаспектный анализ каждого текста экспертом-лингвистом по 5 установленным критериям.</p>
+              <h4 className="font-bold text-text-primary mb-2 font-serif text-lg">Этап 3: Экспертная оценка (LLM-as-a-Judge)</h4>
+              <p className="text-sm text-text-secondary">Поаспектный анализ каждого текста передовой языковой моделью Claude 4.6 Opus в рамках методологии LLM-as-a-Judge, выступающей в качестве эксперта-лингвиста. Это является методическим экспериментом, призванным минимизировать субъективность человеческого фактора.</p>
             </div>
             <div className="card shadow-soft hover:shadow-medium transition-shadow">
               <h4 className="font-bold text-text-primary mb-2 font-serif text-lg">Этап 4: Статистический анализ</h4>
