@@ -53,14 +53,14 @@ const CriteriaPage: React.FC = () => {
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
         <div className="p-8 bg-text-primary text-surface rounded-3xl space-y-4">
-          <h3 className="text-2xl font-bold">Почему это важно?</h3>
+          <h3 className="text-2xl font-bold text-white">Почему это важно?</h3>
           <p className="text-surface/70 leading-relaxed">
             Простая оценка "хорошо/плохо" не дает понимания специализации моделей. Разделение на критерии позволяет увидеть,
             что одна модель может быть лучше в сохранении терминологии, в то время как другая — в естественности звучания.
           </p>
         </div>
         <div className="p-8 bg-accent text-surface rounded-3xl space-y-4">
-          <h3 className="text-2xl font-bold">Автоматизация vs Эксперты</h3>
+          <h3 className="text-2xl font-bold text-white">Автоматизация vs Эксперты</h3>
           <p className="text-surface/90 leading-relaxed">
             Данные баллы получены путем экспертной оценки лингвистами. Мы сравниваем их с автоматическими метриками (BLEU, METEOR)
             в разделе методологии для верификации результатов исследования.
