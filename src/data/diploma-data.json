@@ -337,19 +337,19 @@
       "scores": {
         "gemini": {
           "adequacy": 8.5,
-          "style": 9.0,
+          "style": 8.5,
           "naturalness": 8.5,
-          "terminology": 8.0,
+          "terminology": 8.5,
           "pragmatics": 8.5,
           "weighted": 8.6
         },
         "gigachat": {
-          "adequacy": 6.0,
-          "style": 7.0,
+          "adequacy": 6.5,
+          "style": 6.5,
           "naturalness": 6.5,
-          "terminology": 7.0,
-          "pragmatics": 6.0,
-          "weighted": 6.45
+          "terminology": 6.5,
+          "pragmatics": 6.5,
+          "weighted": 6.55
         },
         "claude": {
           "adequacy": 9.5,
@@ -448,12 +448,12 @@
       },
       "scores": {
         "gemini": {
-          "adequacy": 9.0,
-          "style": 8.5,
-          "naturalness": 8.5,
-          "terminology": 9.0,
-          "pragmatics": 8.5,
-          "weighted": 8.725
+          "adequacy": 8.8,
+          "style": 8.8,
+          "naturalness": 8.8,
+          "terminology": 8.8,
+          "pragmatics": 8.8,
+          "weighted": 8.8
         },
         "gigachat": {
           "adequacy": 5.8,
@@ -464,12 +464,12 @@
           "weighted": 5.9
         },
         "claude": {
-          "adequacy": 9.5,
-          "style": 9.0,
-          "naturalness": 9.5,
-          "terminology": 9.0,
-          "pragmatics": 9.0,
-          "weighted": 9.275
+          "adequacy": 9.3,
+          "style": 9.3,
+          "naturalness": 9.3,
+          "terminology": 9.3,
+          "pragmatics": 9.3,
+          "weighted": 9.3
         }
       },
       "winner": "claude",
@@ -568,12 +568,12 @@
           "weighted": 8.7
         },
         "gigachat": {
-          "adequacy": 6.0,
-          "style": 7.0,
+          "adequacy": 6.5,
+          "style": 6.5,
           "naturalness": 6.5,
-          "terminology": 6.0,
-          "pragmatics": 7.0,
-          "weighted": 6.45
+          "terminology": 6.5,
+          "pragmatics": 6.5,
+          "weighted": 6.55
         },
         "claude": {
           "adequacy": 9.4,
@@ -680,12 +680,12 @@
           "weighted": 8.7
         },
         "gigachat": {
-          "adequacy": 5.5,
-          "style": 6.5,
+          "adequacy": 6.0,
+          "style": 6.0,
           "naturalness": 6.0,
-          "terminology": 5.5,
+          "terminology": 6.0,
           "pragmatics": 6.0,
-          "weighted": 5.9
+          "weighted": 6.0
         },
         "claude": {
           "adequacy": 8.5,
@@ -801,11 +801,11 @@
         },
         "claude": {
           "adequacy": 9.5,
-          "style": 10.0,
-          "naturalness": 9.0,
+          "style": 9.5,
+          "naturalness": 9.5,
           "terminology": 9.5,
-          "pragmatics": 9.0,
-          "weighted": 9.475
+          "pragmatics": 9.5,
+          "weighted": 9.5
         }
       },
       "winner": "claude",
