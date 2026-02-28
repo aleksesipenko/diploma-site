@@ -10,7 +10,45 @@ interface ParallelViewerProps {
   report: TextReport;
 }
 
-const ColumnHeader = ({ title, icon, color, isOriginal = false }: { title: string, icon: React.ReactNode, color?: string, isOriginal?: boolean }) => (
+const cleanTextForDisplay = (input: string): string => {
+  if (!input) return '';
+
+  let text = input.replace(/\r\n/g, '\n');
+
+  // markdown links: [text](url) -> text
+  text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '$1');
+
+  const cleanedLines = text
+    .split('\n')
+    .map((line) => {
+      let l = line;
+
+      // remove markdown heading markers
+      l = l.replace(/^\s{0,3}#{1,6}\s*/g, '');
+
+      // remove bold/italic markers
+      l = l.replace(/\*\*(.*?)\*\*/g, '$1').replace(/\*(.*?)\*/g, '$1');
+
+      // normalize strange nbsp spaces
+      l = l.replace(/\u00A0/g, ' ');
+
+      return l;
+    })
+    .filter((line) => {
+      const t = line.trim();
+      if (!t) return true;
+
+      // remove markdown separator and metadata tails
+      if (t === '---') return false;
+      if (/^\*\*(источник|url|ссылка|тип|количество слов|объём текста)\*\*:/i.test(t)) return false;
+
+      return true;
+    });
+
+  return cleanedLines.join('\n').trim();
+};
+
+const ColumnHeader = ({ title, icon, color, isOriginal = false }: { title: string; icon: React.ReactNode; color?: string; isOriginal?: boolean }) => (
   <div className="sticky top-0 z-10 bg-surface/80 backdrop-blur-md border-b border-border p-4 flex items-center gap-3">
     <div
       className="w-8 h-8 rounded-lg flex items-center justify-center text-white"
@@ -18,19 +56,19 @@ const ColumnHeader = ({ title, icon, color, isOriginal = false }: { title: strin
     >
       {icon}
     </div>
-    <div>
+    <div className="min-w-0">
       <h4 className="text-xs font-bold uppercase tracking-widest text-text-secondary">
         {isOriginal ? 'Источник' : 'Перевод'}
       </h4>
-      <h3 className="font-serif font-medium text-text-primary">{title}</h3>
+      <h3 className="font-serif font-medium text-text-primary truncate">{title}</h3>
     </div>
   </div>
 );
 
 const ContentBox = ({ text }: { text: string }) => (
-  <div className="h-full relative">
-    <div className="p-6 text-text-primary leading-relaxed whitespace-pre-wrap font-serif text-[15px] sticky top-[80px]">
-      {text}
+  <div className="h-full relative min-w-0">
+    <div className="p-6 text-text-primary leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere] font-serif text-[15px]">
+      {cleanTextForDisplay(text)}
     </div>
   </div>
 );
@@ -38,7 +76,7 @@ const ContentBox = ({ text }: { text: string }) => (
 const ParallelViewer: React.FC<ParallelViewerProps> = ({ report }) => {
   const modelIds = ['gemini', 'gigachat', 'claude'] as const;
 
-  const models = modelIds.map(id => {
+  const models = modelIds.map((id) => {
     const profile = findLlmProfileByName(id);
     let icon = <Cpu className="w-4 h-4" />;
     if (id === 'gigachat') icon = <Zap className="w-4 h-4" />;
@@ -48,7 +86,7 @@ const ParallelViewer: React.FC<ParallelViewerProps> = ({ report }) => {
       id,
       name: profile?.name || id,
       icon,
-      color: profile ? `var(--${profile.color}-500, ${MODEL_COLORS[id]})` : MODEL_COLORS[id]
+      color: profile ? `var(--${profile.color}-500, ${MODEL_COLORS[id]})` : MODEL_COLORS[id],
     };
   });
 
@@ -63,16 +101,19 @@ const ParallelViewer: React.FC<ParallelViewerProps> = ({ report }) => {
 
       {/* Desktop Grid */}
       <div className="hidden lg:grid grid-cols-4 gap-0 border border-border rounded-3xl overflow-hidden shadow-soft bg-surface">
-        <div className="border-r border-border bg-gray-50/50">
+        <div className="border-r border-border bg-gray-50/50 min-w-0">
           <ColumnHeader title="Original (EN)" icon={<MessageSquareQuote className="w-4 h-4" />} isOriginal color="#6B7280" />
           <ContentBox text={report.original} />
         </div>
 
         {models.map((model) => (
-          <div key={model.id} className={cn(
-            "border-r border-border last:border-0 transition-colors",
-            report.winner === model.id && "bg-accent-light/40"
-          )}>
+          <div
+            key={model.id}
+            className={cn(
+              'border-r border-border last:border-0 transition-colors min-w-0',
+              report.winner === model.id && 'bg-accent-light/40'
+            )}
+          >
             <ColumnHeader title={model.name} icon={model.icon} color={model.color} />
             <ContentBox text={report.translations[model.id as keyof typeof report.translations]} />
           </div>
@@ -81,13 +122,13 @@ const ParallelViewer: React.FC<ParallelViewerProps> = ({ report }) => {
 
       {/* Tablet Grid */}
       <div className="hidden md:grid lg:hidden grid-cols-2 gap-6">
-        <div className="card p-0 overflow-hidden">
+        <div className="card p-0 overflow-hidden min-w-0">
           <ColumnHeader title="Original (EN)" icon={<MessageSquareQuote className="w-4 h-4" />} isOriginal color="#6B7280" />
           <ContentBox text={report.original} />
         </div>
 
         {models.map((model) => (
-          <div key={model.id} className="card p-0 overflow-hidden">
+          <div key={model.id} className="card p-0 overflow-hidden min-w-0">
             <ColumnHeader title={model.name} icon={model.icon} color={model.color} />
             <ContentBox text={report.translations[model.id as keyof typeof report.translations]} />
           </div>
@@ -99,20 +140,20 @@ const ParallelViewer: React.FC<ParallelViewerProps> = ({ report }) => {
         <Tabs defaultValue="original" className="w-full">
           <TabsList className="grid grid-cols-4 mb-4 bg-gray-100 p-1 rounded-xl">
             <TabsTrigger value="original" className="text-[10px] uppercase font-bold">Orig</TabsTrigger>
-            {models.map(model => (
+            {models.map((model) => (
               <TabsTrigger key={model.id} value={model.id} className="text-[10px] uppercase font-bold">
                 {model.id === 'gigachat' ? 'Giga' : model.name.substring(0, 4)}
               </TabsTrigger>
             ))}
           </TabsList>
 
-          <TabsContent value="original" className="border border-border rounded-2xl bg-surface p-4 font-serif text-sm leading-relaxed shadow-sm">
-            {report.original}
+          <TabsContent value="original" className="border border-border rounded-2xl bg-surface p-4 font-serif text-sm leading-relaxed shadow-sm whitespace-pre-wrap break-words [overflow-wrap:anywhere]">
+            {cleanTextForDisplay(report.original)}
           </TabsContent>
 
           {models.map((model) => (
-            <TabsContent key={model.id} value={model.id} className="border border-border rounded-2xl bg-surface p-4 font-serif text-sm leading-relaxed shadow-sm">
-              {report.translations[model.id as keyof typeof report.translations]}
+            <TabsContent key={model.id} value={model.id} className="border border-border rounded-2xl bg-surface p-4 font-serif text-sm leading-relaxed shadow-sm whitespace-pre-wrap break-words [overflow-wrap:anywhere]">
+              {cleanTextForDisplay(report.translations[model.id as keyof typeof report.translations])}
             </TabsContent>
           ))}
         </Tabs>
