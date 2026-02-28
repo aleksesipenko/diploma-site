@@ -5,15 +5,18 @@ import CriteriaRadar from '../components/overview/CriteriaRadar';
 import ModelProfileCards from '../components/overview/ModelProfileCards';
 import diplomaData from '../data/diploma-data.json';
 import type { DiplomaData } from '../types';
-
+import { calculateCriteriaAverages, calculateOverallLeaderboard } from '../utils/calculations';
 
 const OverviewPage: React.FC = () => {
   const data = diplomaData as unknown as DiplomaData;
   const { summary } = data;
 
+  const criteriaAverages = calculateCriteriaAverages(data.reports);
+  const overallWinner = calculateOverallLeaderboard(data.reports).winner;
+
   const barChartData: Record<string, number> = {};
-  for (const [model, scores] of Object.entries(summary.criteriaAverages)) {
-    barChartData[model] = scores.weighted;
+  for (const [model, scores] of Object.entries(criteriaAverages)) {
+    barChartData[model] = (scores as any).weighted;
   }
 
   return (
@@ -26,12 +29,12 @@ const OverviewPage: React.FC = () => {
       </header>
 
       {/* Hero Section */}
-      <WinnerHero winnerData={summary.overallWinner} />
+      <WinnerHero winnerData={overallWinner} />
 
       {/* Charts Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
         <ScoreBarChart data={barChartData} />
-        <CriteriaRadar data={summary.criteriaAverages} />
+        <CriteriaRadar data={criteriaAverages as any} />
       </div>
 
       {/* Detailed Profiles */}
@@ -48,7 +51,7 @@ const OverviewPage: React.FC = () => {
 
         <ModelProfileCards
           profiles={summary.modelProfiles}
-          winner={summary.overallWinner.model}
+          winner={overallWinner.model}
         />
       </section>
 

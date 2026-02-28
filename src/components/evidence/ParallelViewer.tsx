@@ -3,6 +3,7 @@ import type { TextReport } from '../../types';
 import { MODEL_COLORS } from '../../types';
 import { cn } from '../../lib/utils';
 import { Cpu, Zap, Brain, MessageSquareQuote } from 'lucide-react';
+import { calculateWeightedScore } from '../../utils/calculations';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
 import { findLlmProfileByName } from '../../data/llmProfiles';
 
@@ -93,6 +94,12 @@ const ParallelViewer: React.FC<ParallelViewerProps> = ({ report }) => {
   const modelIds = ['gemini', 'gigachat', 'claude'] as const;
   const sourceMeta = SOURCE_BY_REPORT_ID[report.id];
 
+  const winner = modelIds.reduce((currentWinner, model) => {
+    const score = calculateWeightedScore((report.scores as any)[model]);
+    const maxScore = calculateWeightedScore((report.scores as any)[currentWinner]);
+    return score > maxScore ? model : currentWinner;
+  }, 'claude');
+
   const models = modelIds.map((id) => {
     const profile = findLlmProfileByName(id);
     let icon = <Cpu className="w-4 h-4" />;
@@ -138,7 +145,7 @@ const ParallelViewer: React.FC<ParallelViewerProps> = ({ report }) => {
             key={model.id}
             className={cn(
               'border-r border-border last:border-0 transition-colors min-w-0',
-              report.winner === model.id && 'bg-accent-light/40'
+              winner === model.id && 'bg-accent-light/40'
             )}
           >
             <ColumnHeader title={model.name} icon={model.icon} color={model.color} />

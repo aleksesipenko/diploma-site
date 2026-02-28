@@ -1,11 +1,15 @@
 import React from 'react';
-import { Trophy, Star, TrendingUp } from 'lucide-react';
-import type { SummaryData } from '../../types';
+import { Trophy, Star } from 'lucide-react';
 
 import { findLlmProfileByName } from '../../data/llmProfiles';
 
 interface WinnerHeroProps {
-  winnerData: SummaryData['overallWinner'];
+  winnerData: {
+    model: string;
+    score: number;
+    wins: number;
+    genreWins: number;
+  };
 }
 
 const WinnerHero: React.FC<WinnerHeroProps> = ({ winnerData }) => {
@@ -57,7 +61,7 @@ const WinnerHero: React.FC<WinnerHeroProps> = ({ winnerData }) => {
             {winnerPrimary} продемонстрировал непревзойденную адаптивность и терминологическую точность.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 border-t border-white/10 pt-10">
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-6 md:gap-8 border-t border-white/10 pt-10">
             <div>
               <div className="text-xs text-gray-400 mb-2 uppercase tracking-widest font-semibold">Итоговый балл</div>
               <div className="text-4xl font-serif font-bold text-white drop-shadow-md">{winnerData.score}<span className="text-xl text-gray-300 font-sans">/10</span></div>
@@ -70,13 +74,7 @@ const WinnerHero: React.FC<WinnerHeroProps> = ({ winnerData }) => {
               <div className="text-xs text-gray-400 mb-2 uppercase tracking-widest font-semibold">Жанровое лидерство</div>
               <div className="text-4xl font-serif font-bold text-white drop-shadow-md">{winnerData.genreWins}<span className="text-xl text-gray-300 font-sans">/5</span></div>
             </div>
-            <div>
-              <div className="text-xs text-gray-400 mb-2 uppercase tracking-widest font-semibold">Отрыв от Gemini</div>
-              <div className="text-4xl font-serif font-bold text-emerald-400 flex items-center justify-center md:justify-start gap-1 drop-shadow-md">
-                <TrendingUp className="w-6 h-6" />
-                +{winnerData.marginToGemini}
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

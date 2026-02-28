@@ -1,5 +1,6 @@
 import React from 'react';
 import { type ModelScores, type CriteriaScores, CRITERION_LABELS, MODEL_COLORS } from '../../types';
+import { calculateWeightedScore } from '../../utils/calculations';
 import {
   BarChart,
   Bar,
@@ -133,7 +134,7 @@ const CriteriaBreakdown: React.FC<CriteriaBreakdownProps> = ({ data }) => {
                 className="px-3 py-1 rounded-full text-xs font-bold"
                 style={{ backgroundColor: `${MODEL_COLORS[model] || '#A8A29E'}15`, color: MODEL_COLORS[model] || '#A8A29E' }}
               >
-                Балл: {data[model].weighted.toFixed(2)}
+                Балл: {calculateWeightedScore(data[model] as any).toFixed(2)}
               </div>
             </div>
 

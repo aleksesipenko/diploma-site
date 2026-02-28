@@ -3,12 +3,13 @@ import GenreTable from '../components/genres/GenreTable';
 import GenreInsights from '../components/genres/GenreInsights';
 import diplomaData from '../data/diploma-data.json';
 import type { DiplomaData } from '../types';
+import { calculateGenreRankings } from '../utils/calculations';
 import { Link } from 'react-router-dom';
 import BackToHome from '../components/shared/BackToHome';
 
 const GenresPage: React.FC = () => {
   const data = diplomaData as unknown as DiplomaData;
-  const { genreRankings } = data.summary;
+  const genreRankings = calculateGenreRankings(data.reports);
 
   return (
     <div className="space-y-16 py-8">

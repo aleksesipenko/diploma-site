@@ -3,6 +3,7 @@ import type { TextReport } from '../../types';
 import { CRITERION_LABELS, CRITERION_WEIGHTS, MODEL_COLORS } from '../../types';
 import { cn } from '../../lib/utils';
 import { Trophy, Scale } from 'lucide-react';
+import { calculateWeightedScore } from '../../utils/calculations';
 import { findLlmProfileByName } from '../../data/llmProfiles';
 
 interface ScoreCardProps {
@@ -12,6 +13,16 @@ interface ScoreCardProps {
 const ScoreCard: React.FC<ScoreCardProps> = ({ report }) => {
   const criteriaKeys = Object.keys(CRITERION_LABELS) as Array<keyof typeof CRITERION_LABELS>;
   const models = ['gemini', 'gigachat', 'claude'] as const;
+
+  // Calculate weighted scores dynamically
+  const weightedScores = models.reduce((acc, model) => {
+    acc[model] = calculateWeightedScore(report.scores[model] as any);
+    return acc;
+  }, {} as Record<string, number>);
+
+  // Find the winner model
+  const maxScore = Math.max(...Object.values(weightedScores));
+  const winner = models.find(m => weightedScores[m] === maxScore) || 'tie';
 
   const getWinner = (criterion: keyof typeof CRITERION_LABELS) => {
     const scores = models.map(m => report.scores[m][criterion]);
@@ -30,7 +41,7 @@ const ScoreCard: React.FC<ScoreCardProps> = ({ report }) => {
         <div className="flex items-center gap-3 bg-stone-50 px-4 py-2 rounded-xl border border-stone-100">
           <Trophy className="w-4 h-4 text-amber-500" />
           <span className="text-sm font-medium text-stone-600">
-            Победитель: <span className="text-stone-900 font-bold capitalize">{report.winner}</span>
+            Победитель: <span className="text-stone-900 font-bold capitalize">{winner}</span>
           </span>
         </div>
       </div>
@@ -96,7 +107,7 @@ const ScoreCard: React.FC<ScoreCardProps> = ({ report }) => {
                   "py-6 px-6 text-center text-2xl font-mono font-black",
                   index === models.length - 1 && "rounded-br-3xl"
                 )}>
-                  {report.scores[model].weighted.toFixed(2)}
+                  {weightedScores[model].toFixed(2)}
                 </td>
               ))}
             </tr>

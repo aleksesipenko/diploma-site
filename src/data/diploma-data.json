@@ -1,229 +1,5 @@
 {
   "summary": {
-    "criteriaAverages": {
-      "gemini": {
-        "adequacy": 9.0,
-        "style": 8.5,
-        "naturalness": 8.5,
-        "terminology": 8.7,
-        "pragmatics": 8.25,
-        "weighted": 8.72
-      },
-      "gigachat": {
-        "adequacy": 6.4,
-        "style": 6.15,
-        "naturalness": 5.95,
-        "terminology": 5.6,
-        "pragmatics": 5.75,
-        "weighted": 6.12
-      },
-      "claude": {
-        "adequacy": 9.15,
-        "style": 9.3,
-        "naturalness": 9.25,
-        "terminology": 9.2,
-        "pragmatics": 9.4,
-        "weighted": 9.23
-      }
-    },
-    "textScores": [
-      {
-        "id": 1,
-        "title": "News (IT-регулирование)",
-        "genre": "News",
-        "genreRu": "Новостной",
-        "gemini": 8.75,
-        "gigachat": 7.1,
-        "claude": 9.1,
-        "winner": "claude"
-      },
-      {
-        "id": 2,
-        "title": "News (Google Quantum)",
-        "genre": "News",
-        "genreRu": "Новостной",
-        "gemini": 8.45,
-        "gigachat": 6.15,
-        "claude": 9.0,
-        "winner": "claude"
-      },
-      {
-        "id": 3,
-        "title": "Sci-pop (James Webb)",
-        "genre": "Sci-pop",
-        "genreRu": "Научно-популярный",
-        "gemini": 8.85,
-        "gigachat": 5.75,
-        "claude": 9.25,
-        "winner": "claude"
-      },
-      {
-        "id": 4,
-        "title": "Sci-pop (Black hole)",
-        "genre": "Sci-pop",
-        "genreRu": "Научно-популярный",
-        "gemini": 8.35,
-        "gigachat": 4.75,
-        "claude": 9.1,
-        "winner": "claude"
-      },
-      {
-        "id": 5,
-        "title": "Official (Contract amendment)",
-        "genre": "Official",
-        "genreRu": "Официально-деловой",
-        "gemini": 8.7,
-        "gigachat": 6.8,
-        "claude": 9.45,
-        "winner": "claude"
-      },
-      {
-        "id": 6,
-        "title": "Official (Board meeting)",
-        "genre": "Official",
-        "genreRu": "Официально-деловой",
-        "gemini": 8.7,
-        "gigachat": 6.8,
-        "claude": 9.45,
-        "winner": "claude"
-      },
-      {
-        "id": 7,
-        "title": "Advertising (Headphones)",
-        "genre": "Advertising",
-        "genreRu": "Рекламный",
-        "gemini": 8.8,
-        "gigachat": 5.35,
-        "claude": 9.15,
-        "winner": "claude"
-      },
-      {
-        "id": 8,
-        "title": "Advertising (Cosmetics)",
-        "genre": "Advertising",
-        "genreRu": "Рекламный",
-        "gemini": 8.7,
-        "gigachat": 6.0,
-        "claude": 8.85,
-        "winner": "claude"
-      },
-      {
-        "id": 9,
-        "title": "Fiction (Short story 1)",
-        "genre": "Fiction",
-        "genreRu": "Художественный",
-        "gemini": 8.7,
-        "gigachat": 5.95,
-        "claude": 8.8,
-        "winner": "claude"
-      },
-      {
-        "id": 10,
-        "title": "Fiction (Short story 2)",
-        "genre": "Fiction",
-        "genreRu": "Художественный",
-        "gemini": 8.7,
-        "gigachat": 6.6,
-        "claude": 9.5,
-        "winner": "claude"
-      }
-    ],
-    "genreRankings": [
-      {
-        "genre": "News",
-        "genreRu": "Новостной",
-        "textIds": [
-          1,
-          2
-        ],
-        "gemini": 8.68,
-        "gigachat": 6.83,
-        "claude": 9.23,
-        "leader": "claude",
-        "leaderMargin": 0.55,
-        "observations": [
-          "Claude лидирует с заметным отрывом",
-          "GigaChat значительно отстает"
-        ]
-      },
-      {
-        "genre": "Sci-pop",
-        "genreRu": "Научно-популярный",
-        "textIds": [
-          3,
-          4
-        ],
-        "gemini": 8.83,
-        "gigachat": 5.83,
-        "claude": 9.28,
-        "leader": "claude",
-        "leaderMargin": 0.45,
-        "observations": [
-          "Наибольший разрыв в жанре",
-          "GigaChat показал худший результат"
-        ]
-      },
-      {
-        "genre": "Official",
-        "genreRu": "Официально-деловой",
-        "textIds": [
-          5,
-          6
-        ],
-        "gemini": 8.7,
-        "gigachat": 6.68,
-        "claude": 9.43,
-        "leader": "claude",
-        "leaderMargin": 0.73,
-        "observations": [
-          "Самый большой отрыв Claude",
-          "GigaChat не справился с официальным стилем"
-        ]
-      },
-      {
-        "genre": "Advertising",
-        "genreRu": "Рекламный",
-        "textIds": [
-          7,
-          8
-        ],
-        "gemini": 8.75,
-        "gigachat": 5.68,
-        "claude": 9.0,
-        "leader": "claude",
-        "leaderMargin": 0.25,
-        "observations": [
-          "Наименьший отрыв среди жанров",
-          "GigaChat исказил название бренда"
-        ]
-      },
-      {
-        "genre": "Fiction",
-        "genreRu": "Художественный",
-        "textIds": [
-          9,
-          10
-        ],
-        "gemini": 8.7,
-        "gigachat": 6.28,
-        "claude": 9.15,
-        "leader": "claude",
-        "leaderMargin": 0.45,
-        "observations": [
-          "GigaChat потерял ключевые образы",
-          "Claude лучше передал атмосферу"
-        ]
-      }
-    ],
-    "overallWinner": {
-      "model": "claude",
-      "score": 9.23,
-      "wins": 10,
-      "genreWins": 5,
-      "confidence": "Высокая (≥ 95%)",
-      "marginToGemini": 0.51,
-      "marginToGigachat": 3.11
-    },
     "metrics": {
       "referenceModel": "claude",
       "bleu": {
@@ -284,28 +60,23 @@
           "style": 8.5,
           "naturalness": 8.5,
           "terminology": 9.0,
-          "pragmatics": 8.0,
-          "weighted": 8.75
+          "pragmatics": 8.0
         },
         "gigachat": {
           "adequacy": 7.0,
           "style": 7.0,
           "naturalness": 7.0,
           "terminology": 7.5,
-          "pragmatics": 7.0,
-          "weighted": 7.1
+          "pragmatics": 7.0
         },
         "claude": {
           "adequacy": 9.5,
           "style": 9.0,
           "naturalness": 9.0,
           "terminology": 9.0,
-          "pragmatics": 8.5,
-          "weighted": 9.1
+          "pragmatics": 8.5
         }
       },
-      "winner": "claude",
-      "winnerText": "Победитель: Claude",
       "observations": {
         "gemini": [
           "Качественная адаптация",
@@ -340,28 +111,23 @@
           "style": 8,
           "naturalness": 8,
           "terminology": 8,
-          "pragmatics": 8,
-          "weighted": 8.45
+          "pragmatics": 8
         },
         "gigachat": {
           "adequacy": 6,
           "style": 7,
           "naturalness": 6,
           "terminology": 5,
-          "pragmatics": 6,
-          "weighted": 6.15
+          "pragmatics": 6
         },
         "claude": {
           "adequacy": 9,
           "style": 9,
           "naturalness": 9,
           "terminology": 9,
-          "pragmatics": 9,
-          "weighted": 9.0
+          "pragmatics": 9
         }
       },
-      "winner": "claude",
-      "winnerText": "Победитель: Claude",
       "observations": {
         "gemini": [
           "Хорошая терминология",
@@ -396,28 +162,23 @@
           "style": 8.5,
           "naturalness": 8.5,
           "terminology": 9.0,
-          "pragmatics": 8.5,
-          "weighted": 8.85
+          "pragmatics": 8.5
         },
         "gigachat": {
           "adequacy": 5.5,
           "style": 6.0,
           "naturalness": 5.5,
           "terminology": 6.0,
-          "pragmatics": 5.5,
-          "weighted": 5.75
+          "pragmatics": 5.5
         },
         "claude": {
           "adequacy": 9.5,
           "style": 9.0,
           "naturalness": 9.0,
           "terminology": 9.5,
-          "pragmatics": 9.0,
-          "weighted": 9.25
+          "pragmatics": 9.0
         }
       },
-      "winner": "claude",
-      "winnerText": "Победитель: Claude",
       "observations": {
         "gemini": [
           "Хорошая терминология",
@@ -452,28 +213,23 @@
           "style": 8,
           "naturalness": 8,
           "terminology": 9,
-          "pragmatics": 7,
-          "weighted": 8.35
+          "pragmatics": 7
         },
         "gigachat": {
           "adequacy": 5,
           "style": 5,
           "naturalness": 4,
           "terminology": 4,
-          "pragmatics": 5,
-          "weighted": 4.75
+          "pragmatics": 5
         },
         "claude": {
           "adequacy": 9,
           "style": 9,
           "naturalness": 9,
           "terminology": 10,
-          "pragmatics": 9,
-          "weighted": 9.1
+          "pragmatics": 9
         }
       },
-      "winner": "claude",
-      "winnerText": "Победитель: Claude",
       "observations": {
         "gemini": [
           "Хорошие концепции",
@@ -508,28 +264,23 @@
           "style": 8.5,
           "naturalness": 8.5,
           "terminology": 9.0,
-          "pragmatics": 8.0,
-          "weighted": 8.7
+          "pragmatics": 8.0
         },
         "gigachat": {
           "adequacy": 6.8,
           "style": 6.5,
           "naturalness": 6.5,
           "terminology": 7.0,
-          "pragmatics": 6.5,
-          "weighted": 6.8
+          "pragmatics": 6.5
         },
         "claude": {
           "adequacy": 9.5,
           "style": 9.5,
           "naturalness": 9.5,
           "terminology": 9.5,
-          "pragmatics": 9.0,
-          "weighted": 9.45
+          "pragmatics": 9.0
         }
       },
-      "winner": "claude",
-      "winnerText": "Победитель: Claude",
       "observations": {
         "gemini": [
           "Хорошие формулы",
@@ -564,28 +315,23 @@
           "style": 8.5,
           "naturalness": 8.5,
           "terminology": 9,
-          "pragmatics": 8,
-          "weighted": 8.7
+          "pragmatics": 8
         },
         "gigachat": {
           "adequacy": 7,
           "style": 6.5,
           "naturalness": 7,
           "terminology": 7,
-          "pragmatics": 6,
-          "weighted": 6.8
+          "pragmatics": 6
         },
         "claude": {
           "adequacy": 9.5,
           "style": 9.5,
           "naturalness": 9.5,
           "terminology": 9,
-          "pragmatics": 9.5,
-          "weighted": 9.45
+          "pragmatics": 9.5
         }
       },
-      "winner": "claude",
-      "winnerText": "Победитель: Claude",
       "observations": {
         "gemini": [
           "Юридическая терминология",
@@ -620,28 +366,23 @@
           "style": 9.0,
           "naturalness": 8.5,
           "terminology": 8.5,
-          "pragmatics": 8.5,
-          "weighted": 8.8
+          "pragmatics": 8.5
         },
         "gigachat": {
           "adequacy": 5.0,
           "style": 5.5,
           "naturalness": 5.0,
           "terminology": 5.5,
-          "pragmatics": 5.0,
-          "weighted": 5.35
+          "pragmatics": 5.0
         },
         "claude": {
           "adequacy": 9.5,
           "style": 9.0,
           "naturalness": 9.0,
           "terminology": 9.0,
-          "pragmatics": 9.0,
-          "weighted": 9.15
+          "pragmatics": 9.0
         }
       },
-      "winner": "claude",
-      "winnerText": "Победитель: Claude",
       "observations": {
         "gemini": [
           "Хорошая адаптация",
@@ -676,28 +417,23 @@
           "style": 8.5,
           "naturalness": 8.5,
           "terminology": 9,
-          "pragmatics": 8.5,
-          "weighted": 8.7
+          "pragmatics": 8.5
         },
         "gigachat": {
           "adequacy": 6.5,
           "style": 5.5,
           "naturalness": 6,
           "terminology": 5.5,
-          "pragmatics": 6,
-          "weighted": 6.0
+          "pragmatics": 6
         },
         "claude": {
           "adequacy": 8.5,
           "style": 9,
           "naturalness": 9,
           "terminology": 9,
-          "pragmatics": 9.5,
-          "weighted": 8.85
+          "pragmatics": 9.5
         }
       },
-      "winner": "claude",
-      "winnerText": "Победитель: Claude",
       "observations": {
         "gemini": [
           "Хорошая адаптация",
@@ -732,28 +468,23 @@
           "style": 8.5,
           "naturalness": 8.5,
           "terminology": 8.5,
-          "pragmatics": 8.5,
-          "weighted": 8.7
+          "pragmatics": 8.5
         },
         "gigachat": {
           "adequacy": 6.0,
           "style": 5.5,
           "naturalness": 6.0,
           "terminology": 6.0,
-          "pragmatics": 6.5,
-          "weighted": 5.95
+          "pragmatics": 6.5
         },
         "claude": {
           "adequacy": 8.5,
           "style": 9.0,
           "naturalness": 9.0,
           "terminology": 8.5,
-          "pragmatics": 9.0,
-          "weighted": 8.8
+          "pragmatics": 9.0
         }
       },
-      "winner": "claude",
-      "winnerText": "Победитель: Claude",
       "observations": {
         "gemini": [
           "Атмосфера",
@@ -788,28 +519,23 @@
           "style": 8.5,
           "naturalness": 8.5,
           "terminology": 9,
-          "pragmatics": 8.5,
-          "weighted": 8.7
+          "pragmatics": 8.5
         },
         "gigachat": {
           "adequacy": 7,
           "style": 6.5,
           "naturalness": 6,
           "terminology": 7,
-          "pragmatics": 6.5,
-          "weighted": 6.6
+          "pragmatics": 6.5
         },
         "claude": {
           "adequacy": 9.5,
           "style": 9.5,
           "naturalness": 9.5,
           "terminology": 9.5,
-          "pragmatics": 9.5,
-          "weighted": 9.5
+          "pragmatics": 9.5
         }
       },
-      "winner": "claude",
-      "winnerText": "Победитель: Claude",
       "observations": {
         "gemini": [
           "Атмосфера",

@@ -8,6 +8,7 @@ import ObservationsAccordion from '../components/evidence/ObservationsAccordion'
 import { FileSearch, AlertCircle } from 'lucide-react';
 import BackToHome from '../components/shared/BackToHome';
 import type { TextReport } from '../types';
+import { calculateWeightedScore } from '../utils/calculations';
 
 const EvidencePage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -94,14 +95,24 @@ const EvidencePage: React.FC = () => {
                 <div className="text-[10px] font-bold text-text-secondary uppercase tracking-widest mb-1">Победитель</div>
                 <div className="text-xl font-serif font-bold capitalize text-text-primary flex items-center justify-end gap-2">
                   <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                  {report.winner}
+                  {
+                    ['gemini', 'gigachat', 'claude'].reduce((winner, model) => {
+                      const score = calculateWeightedScore((report.scores as any)[model]);
+                      const maxScore = calculateWeightedScore((report.scores as any)[winner]);
+                      return score > maxScore ? model : winner;
+                    }, 'claude')
+                  }
                 </div>
               </div>
               <div className="w-px h-12 bg-border" />
               <div className="text-right">
                 <div className="text-[10px] font-bold text-text-secondary uppercase tracking-widest mb-1">Балл</div>
                 <div className="text-2xl font-mono font-bold text-accent">
-                  {Math.max(report.scores.gemini.weighted, report.scores.gigachat.weighted, report.scores.claude.weighted).toFixed(2)}
+                  {Math.max(
+                    calculateWeightedScore(report.scores.gemini as any),
+                    calculateWeightedScore(report.scores.gigachat as any),
+                    calculateWeightedScore(report.scores.claude as any)
+                  ).toFixed(2)}
                 </div>
               </div>
             </div>

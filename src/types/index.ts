@@ -6,7 +6,6 @@ export interface CriteriaScores {
   naturalness: number;   // C. Естественность (20%)
   terminology: number;   // D. Терминология (10%)
   pragmatics: number;    // E. Прагматика (10%)
-  weighted: number;      // Итоговый взвешенный
 }
 
 export type ModelScores = Record<string, CriteriaScores>;
@@ -22,8 +21,6 @@ export interface TextReport {
   original: string;
   translations: Record<string, string>;
   scores: ModelScores;
-  winner: string | 'tie';
-  winnerText: string;
   observations: Record<string, string[]>;
   analysis: {
     adequacy: CriterionAnalysis;
@@ -51,26 +48,7 @@ export interface ModelProfile {
 }
 
 export interface SummaryData {
-  criteriaAverages: ModelScores;
-  textScores: Array<{
-    id: number;
-    title: string;
-    genre: string;
-    genreRu: string;
-    winner: string;
-    [modelScores: string]: number | string;
-  }>;
-  genreRankings: GenreStats[];
-  overallWinner: {
-    model: string;
-    score: number;
-    wins: number;
-    genreWins: number;
-    confidence: string;
-    marginToGemini?: number;
-    marginToGigachat?: number;
-    [otherMargins: string]: number | string | undefined;
-  };
+  metrics?: Record<string, Record<string, number>>; // Keep metrics mapping if it's there
   modelProfiles: Record<string, ModelProfile>;
   limitations: string[];
   conclusions: string[];

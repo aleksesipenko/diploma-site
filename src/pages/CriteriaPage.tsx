@@ -3,12 +3,13 @@ import WeightExplainer from '../components/criteria/WeightExplainer';
 import CriteriaBreakdown from '../components/criteria/CriteriaBreakdown';
 import diplomaData from '../data/diploma-data.json';
 import type { DiplomaData } from '../types';
+import { calculateCriteriaAverages } from '../utils/calculations';
 import { ShieldCheck, Info } from 'lucide-react';
 import BackToHome from '../components/shared/BackToHome';
 
 const CriteriaPage: React.FC = () => {
   const data = diplomaData as unknown as DiplomaData;
-  const { criteriaAverages } = data.summary;
+  const criteriaAverages = calculateCriteriaAverages(data.reports);
 
   return (
     <div className="space-y-16 py-8">
@@ -48,7 +49,7 @@ const CriteriaPage: React.FC = () => {
             <span className="text-xs font-medium text-text-secondary">Шкала от 1 до 10 баллов</span>
           </div>
         </div>
-        <CriteriaBreakdown data={criteriaAverages} />
+        <CriteriaBreakdown data={criteriaAverages as any} />
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
